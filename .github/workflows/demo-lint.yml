@@ -9,8 +9,6 @@ on:
   pull_request:
     branches:
       - main
-env:
-  TEST: This is default value of test variable
 
 
 jobs:
@@ -20,7 +18,7 @@ jobs:
 
     steps:
       - name: Show test variable
-        run: "echo ${{ env.TEST }}"
+        run: "echo ${{ secrets.TEST }}"
 
       - name: Check out Git repository
         uses: actions/checkout@v4
